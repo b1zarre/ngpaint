@@ -65,15 +65,10 @@ export class CanvasComponent implements AfterViewInit {
         this.cx.strokeStyle = this.palette.nativeElement.value;
     }
     randomGradient() {
-        const gradient = this.cx.createLinearGradient(
-            0,
-            Math.floor(Math.random() * 250),
-            Math.floor(Math.random() * 250),
-            0
-        );
-        gradient.addColorStop(Math.random(), this.getRandomColor());
-        gradient.addColorStop(Math.random(), this.getRandomColor());
-        gradient.addColorStop(Math.random(), this.getRandomColor());
+        const gradient = this.cx.createLinearGradient(250, 0, 700, 0);
+        gradient.addColorStop(0, this.getRandomColor());
+        gradient.addColorStop(0.5, this.getRandomColor());
+        gradient.addColorStop(1, this.getRandomColor());
         this.cx.strokeStyle = gradient;
     }
     public ngOnChanges(changes: SimpleChanges): void {
