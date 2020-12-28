@@ -60,6 +60,10 @@ export class CanvasComponent implements AfterViewInit {
         }
         return color;
     }
+    onRandomColor() {
+        this.palette.nativeElement.value = this.getRandomColor();
+        this.cx.strokeStyle = this.palette.nativeElement.value;
+    }
     randomGradient() {
         const gradient = this.cx.createLinearGradient(
             0,

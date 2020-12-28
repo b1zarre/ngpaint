@@ -3,6 +3,7 @@
 <div class="random">
     <input type="color" name="color" id="color" (change)="onColorChange()" #palette>
     <button (click)="randomGradient()" mat-raised-button color="accent">Random gradient</button>
+    <button (click)="onRandomColor()" mat-raised-button color="primary">Random color</button>
 </div>
 
 <canvas #canvas></canvas>
