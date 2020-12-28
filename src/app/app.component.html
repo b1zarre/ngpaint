@@ -1,0 +1,46 @@
+
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav mode="side" opened>
+    <div class="toolbar">
+      <h2>Toolbar</h2>
+      <!-- <app-palette (colorChange)="setNewColor($event)"></app-palette> -->
+      <mat-card>
+        <mat-card-header>
+        
+        </mat-card-header>
+        <mat-card-content>
+          <mat-button-toggle-group #group="matButtonToggleGroup" value="pencil">
+            <mat-button-toggle value="pencil" aria-label="Text align left" (change)="figureTypeChange($event)">
+              <mat-icon>gesture</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="line" aria-label="Text align left" (change)="figureTypeChange($event)">
+              <mat-icon>remove</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="square" aria-label="Text align center" (change)="figureTypeChange($event)">
+              <mat-icon>crop_square</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="triangle" aria-label="Text align right" (change)="figureTypeChange($event)">
+              <mat-icon>change_history</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle value="circle" aria-label="Text align justify" (change)="figureTypeChange($event)">
+              <mat-icon>panorama_fish_eye</mat-icon>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </mat-card-content>
+      </mat-card>
+      <mat-card>
+        <mat-card-header>
+          <!--mat-card-subtitle>{{lineWidth}}</mat-card-subtitle-->
+        </mat-card-header>
+        <mat-card-content>
+          <mat-slider class="line-width-slider" min="1" max="100" step="1" [(value)]="lineWidth"></mat-slider>
+          <p>Line width: {{lineWidth}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="canvas">
+    <app-canvas [lineWidth]="lineWidth" [figureType]="figureType" [strokeColor]="strokeColor"></app-canvas>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,14 @@
+
+.random {
+    height: 5%;
+    display: flex;
+    justify-content: flex-start;
+}
+.random > input {
+    height: 100%;
+    width: 50%;
+}
+.random > button {
+    height: 100%;
+    width: 50%;
+}

@@ -1,0 +1,37 @@
+.flex-container {
+  display: flex;
+  height: 98vh;
+  background-color: #f1f1f1;
+}
+
+.flex-container > div {
+  background-color: DodgerBlue;
+  color: white;
+  margin: 0 10px;
+  text-align: center;
+}
+.toolbar {
+  width: 250px;
+  padding: 10px;
+}
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+.mat-drawer-content {
+  overflow: hidden;
+}
+.line-width-slider {
+  width: 100%;
+}
+mat-card {
+  margin-bottom: 10px;
+  padding: 2px;
+}
+.example-selected-value {
+  margin: 15px 0;
+}
