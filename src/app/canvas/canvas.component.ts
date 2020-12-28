@@ -70,6 +70,8 @@ export class CanvasComponent implements AfterViewInit {
         gradient.addColorStop(0.5, this.getRandomColor());
         gradient.addColorStop(1, this.getRandomColor());
         this.cx.strokeStyle = gradient;
+        this.cx.fillStyle = gradient;
+        this.cx.fillRect(0, 5, this.width, 20);
     }
     public ngOnChanges(changes: SimpleChanges): void {
         for (const propName in changes) {
