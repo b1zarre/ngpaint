@@ -51,10 +51,12 @@ export class CanvasComponent implements AfterViewInit {
     }
     onColorChange() {
         this.cx.strokeStyle = this.palette.nativeElement.value;
+        this.cx.clearRect(0, 5, this.width, 20);
     }
     getRandomColor() {
         let letters = "0123456789ABCDEF";
         let color = "#";
+        this.cx.clearRect(0, 5, this.width, 20);
         for (let i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
         }
@@ -71,7 +73,14 @@ export class CanvasComponent implements AfterViewInit {
         gradient.addColorStop(1, this.getRandomColor());
         this.cx.strokeStyle = gradient;
         this.cx.fillStyle = gradient;
-        this.cx.fillRect(0, 5, this.width, 20);
+        if (this.cx.strokeStyle == gradient) {
+            this.cx.fillRect(0, 5, this.width, 20);
+        } else {
+            this.cx.clearRect(0, 5, this.width, 20);
+        }
+        // if (this.cx.strokeStyle !== gradient) {
+        //     this.cx.clearRect(0, 5, this.width, 20);
+        // }
     }
     public ngOnChanges(changes: SimpleChanges): void {
         for (const propName in changes) {
